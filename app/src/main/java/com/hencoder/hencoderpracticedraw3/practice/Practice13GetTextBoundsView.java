@@ -51,6 +51,10 @@ public class Practice13GetTextBoundsView extends View {
         // 然后计算出文字的绘制位置，从而让文字上下居中
         // 这种居中算法的优点是，可以让文字精准地居中，分毫不差
 
+        // rect.top + rect.bottom ? rect.height()不等同
+        // 因为getTextBounds返回的bounds.bottom并不为0
+
+
         int middle = (top + bottom) / 2;
         paint2.getTextBounds(text1, 0, text1.length(), rect);
         canvas.drawText(text1, 100, middle - (rect.top + rect.bottom) / 2, paint2);
